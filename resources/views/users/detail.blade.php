@@ -14,17 +14,17 @@
                                 <tr>
                                     <th>Nama Lengkap</th>
                                     <th>:</th>
-                                    <th>pic1</th>
+                                    <th>{{ $user->name }}</th>
                                 </tr>
                                 <tr>
                                     <th>Username</th>
                                     <th>:</th>
-                                    <th>pic1</th>
+                                    <th>{{ $user->username }}</th>
                                 </tr>
                                 <tr>
                                     <th>Email</th>
                                     <th>:</th>
-                                    <th>pic1@mail.com</th>
+                                    <th>{{ $user->email }}</th>
                                 </tr>
                             </table>
                         </div>

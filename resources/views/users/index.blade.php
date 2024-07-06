@@ -64,10 +64,12 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->username }}</td>
                                         <td>
-                                            <form action="">
-                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                            <form action="{{ route('user.destroy', $user->id) }}" method="POST">
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda akan menghapus id ke {{ $user->id }} dengan username {{ $user->username }}?');">Hapus</button>
                                                 <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning">edit</a>
-                                                <a href="/users/detail" class="btn btn-success">Detail</a>
+                                                <a href="{{ route('user.show', $user->id) }}" class="btn btn-success">Detail</a>
                                             </form>
                                         </td>
                                     </tr>
