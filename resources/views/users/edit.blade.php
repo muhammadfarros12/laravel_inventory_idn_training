@@ -12,19 +12,19 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" name="name" placeholder="Name">
+                                    <input value="{{ $user->name }}" type="text" class="form-control" name="name" placeholder="Name">
                                     <label>Nama Lengkap</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" name="username" placeholder="Username">
+                                    <input value="{{ $user->username }}" type="text" class="form-control" name="username" placeholder="Username">
                                     <label>Nama Pengguna / Username</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating mb-2">
-                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                    <input value="{{ $user->email }}" type="email" class="form-control" name="email" placeholder="Email">
                                     <label>Email</label>
                                 </div>
                             </div>
