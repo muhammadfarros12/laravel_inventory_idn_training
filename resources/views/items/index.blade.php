@@ -116,7 +116,7 @@
                                             <form action="">
                                                 <button type="submit" class="btn btn-danger">Hapus</button>
                                                 <a href="/items/edit" class="btn btn-warning">edit</a>
-                                                <a href="" class="btn btn-success">Detail</a>
+                                                <a href="/items/detail" class="btn btn-success">Detail</a>
                                             </form>
                                         </td>
                                     </tr>

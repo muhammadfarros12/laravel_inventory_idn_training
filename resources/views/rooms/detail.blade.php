@@ -6,43 +6,47 @@
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">
-                        Tambah Data Kategori                    
+                        Tambah Data Ruangan
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" name="nama_kategori" placeholder="Nama Kategori">
-                                    <label>Nama Kategori</label>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6 mt-2">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-success">Tambah Data</button>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="table table-borderless">
+                            <tr>
+                                <th>Nomor Ruangan</th>
+                                <th>:</th>
+                                <th>326</th>
+                            </tr>
+                            <tr>
+                                <th>Nama Ruangan</th>
+                                <th>:</th>
+                                <th>A4</th>
+                            </tr>
+                            <tr>
+                                <th>Penanggung Jawab</th>
+                                <th>:</th>
+                                <th>pic1</th>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <div class="card mt-3">
                     <div class="card-header">
-                        Data Kategori
+                        Barang yang tersedia
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-strip" id="myTable">
                                 <thead>
-                                    <th>Nama Kategori</th>
-                                    <th>Pilihan</th>
+                                    <th>Nomor Barang</th>
+                                    <th>Nama Barang</th>
+                                    <th>Detail</th>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>elektronik</td>
+                                        <td>123536</td>
+                                        <td>Kabel</td>
                                         <td>
                                             <form action="">
-                                                <button type="submit" class="btn btn-danger">Hapus</button>
-                                                <a href="/categories/edit" class="btn btn-warning">edit</a>
+                                                <a href="" class="btn btn-success">Detail</a>
                                             </form>
                                         </td>
                                     </tr>
