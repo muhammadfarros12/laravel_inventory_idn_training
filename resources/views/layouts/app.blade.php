@@ -8,13 +8,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -30,7 +33,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li class="nav-link"><a href="/rooms">Ruangan</a></li>
+                        <li class="nav-link"><a href="/users">Pengguna</a></li>
+                        <li class="nav-link"><a href="/categories">Kategori</a></li>
+                        <li class="nav-link"><a href="/items">Barang</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -76,5 +82,10 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        })
+    </script>
 </body>
 </html>
