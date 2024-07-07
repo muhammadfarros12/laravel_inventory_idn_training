@@ -32,7 +32,7 @@
                 </div>
                 <div class="card mt-3">
                     <div class="card-header">
-                        Data Penanggung Jawab Ruangan
+                        Data Tanggung Jawab Ruangan
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -42,10 +42,12 @@
                                     <th>Nama Ruangan</th>
                                 </thead>
                                 <tbody>
+                                    @foreach($room as $key)
                                     <tr>
-                                        <td>Ruangan 1234</td>
-                                        <td>A3</td>
+                                        <td>{{ $key->room_number }}</td>
+                                        <td>{{ $key->room_name }}</td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

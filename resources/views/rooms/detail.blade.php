@@ -13,17 +13,17 @@
                             <tr>
                                 <th>Nomor Ruangan</th>
                                 <th>:</th>
-                                <th>326</th>
+                                <th>{{ $room->room_number }}</th>
                             </tr>
                             <tr>
                                 <th>Nama Ruangan</th>
                                 <th>:</th>
-                                <th>A4</th>
+                                <th>{{ $room->room_name }}</th>
                             </tr>
                             <tr>
                                 <th>Penanggung Jawab</th>
                                 <th>:</th>
-                                <th>pic1</th>
+                                <th>{{ $room->user->name }}</th>
                             </tr>
                         </table>
                     </div>
@@ -46,6 +46,7 @@
                                         <td>Kabel</td>
                                         <td>
                                             <form action="">
+
                                                 <a href="" class="btn btn-success">Detail</a>
                                             </form>
                                         </td>

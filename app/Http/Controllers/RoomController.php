@@ -49,9 +49,11 @@ class RoomController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Room $room)
+    public function show($id)
     {
-        //
+        $room = Room::find($id);
+        $user = User::all();
+        return view('rooms.detail', compact('room', 'user'));
     }
 
     /**
@@ -78,8 +80,10 @@ class RoomController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Room $room)
+    public function destroy($id)
     {
-        //
+        $room = Room::findOrFail($id);
+        $room->delete();
+        return redirect()->route('room.index');
     }
 }

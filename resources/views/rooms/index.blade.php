@@ -99,10 +99,12 @@
                                         </td>
                                         <td>{{ $room->user->name }}</td>
                                         <td>
-                                            <form action="">
-                                                <button type="submit" class="btn btn-danger">Hapus</button>
+                                            <form action="{{ route('room.destroy', $room->id) }}", method="POST">
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda akan menghapus ruang {{ $room->room_name }}?');">Hapus</button>
                                                 <a href="{{ route('room.edit', $room->id) }}" class="btn btn-warning">edit</a>
-                                                <a href="/rooms/detail" class="btn btn-success">Detail</a>
+                                                <a href="{{ route('room.show', $room->id) }}" class="btn btn-success">Detail</a>
                                             </form>
                                         </td>
                                     </tr>
