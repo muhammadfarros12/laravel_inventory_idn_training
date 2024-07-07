@@ -9,18 +9,21 @@
                         Edit Data Ruangan
                     </div>
                     <div class="card-body">
+                        <form action="{{ route('room.update', $room->id) }}" method="post">
+                        @csrf
+                        {{ method_field('PUT') }}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" name="nama_ruangan" placeholder="Nama Ruangan">
+                                    <input required value="{{ $room->room_name }}" type="text" class="form-control" name="room_name" placeholder="Nama Ruangan">
                                     <label>Nama Ruangan</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Ukuran Ruangan</span>
-                                    <select name="ukuran" class="form-select" id="">
-                                        <option selected>Choose...</option>
+                                    <select name="size" class="form-select">
+                                        <option selected>{{ $room->size }}</option>
                                         <option value="small">Small</option>
                                         <option value="medium">Medium</option>
                                         <option value="large">Large</option>
@@ -30,13 +33,22 @@
 
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text">Penanggung Jawab</span>
-                                    <select name="penanggung_jawab" class="form-select" id="">
-                                        <option selected>Choose...</option>
-                                        <option value="">Pic1</option>
-                                        <option value="">Pic2</option>
-                                        <option value="">Pic3</option>
+                                    <span class="input-group-text
+                                    @error('user_id')
+                                        is-invalid
+                                    @enderror
+                                    ">Penanggung Jawab</span>
+                                    <select name="user_id" class="form-select">
+                                        <option selected value="{{ $room->user->id }}">{{ $room->user->name }}</option>
+                                        @foreach($user as $key)
+                                        @if($key->level == 'pic')
+                                        <option value="{{ $key->id }}">{{ $key->name }}</option>
+                                        @endif
+                                        @endforeach
                                     </select>
+                                    @error('user_id')
+                                        <div class="invalid-feedback">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                             
@@ -48,6 +60,7 @@
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
