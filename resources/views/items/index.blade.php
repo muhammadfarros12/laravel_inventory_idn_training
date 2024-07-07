@@ -75,12 +75,10 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-                                <div class="form-control">
-                                    <div class="input-group">
-                                        <textarea name="spec" id="" cols="100" rows="10"></textarea>
+                            <div class="">
+                                    <div class="form-group">
+                                        <textarea class="form-control ckeditor" name="spec" id="ckeditor"></textarea>
                                     </div>
-                                </div>
                             </div>
 
 

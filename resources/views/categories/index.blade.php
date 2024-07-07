@@ -9,10 +9,12 @@
                         Tambah Data Kategori                    
                     </div>
                     <div class="card-body">
+                        <form action="{{ route('category.store') }}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" name="nama_kategori" placeholder="Nama Kategori">
+                                    <input required type="text" class="form-control" name="category_name" placeholder="Nama Kategori">
                                     <label>Nama Kategori</label>
                                 </div>
                             </div>
@@ -23,6 +25,7 @@
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
                 <div class="card mt-3">
@@ -37,15 +40,19 @@
                                     <th>Pilihan</th>
                                 </thead>
                                 <tbody>
+                                    @foreach($categories as $category)
                                     <tr>
-                                        <td>elektronik</td>
+                                        <td>{{ $category->category_name }}</td>
                                         <td>
-                                            <form action="">
-                                                <button type="submit" class="btn btn-danger">Hapus</button>
-                                                <a href="/categories/edit" class="btn btn-warning">edit</a>
+                                            <form action="{{ route('category.destroy', $category->id) }}" method="POST">
+                                                @csrf
+                                                {{ method_field('DELETE') }}
+                                                <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah anda akan menghapus kategori {{ $category->category_name }}?');">Hapus</button>
+                                                <a href="{{ route('category.edit', $category->id) }}" class="btn btn-warning">edit</a>
                                             </form>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

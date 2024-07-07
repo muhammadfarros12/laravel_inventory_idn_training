@@ -35,7 +35,7 @@
                     <ul class="navbar-nav me-auto">
                         <li class="nav-link"><a style="text-decoration: none" href="/rooms">Ruangan</a></li>
                         <li class="nav-link"><a style="text-decoration: none" href="/user">Pengguna</a></li>
-                        <li class="nav-link"><a style="text-decoration: none" href="/categories">Kategori</a></li>
+                        <li class="nav-link"><a style="text-decoration: none" href="/category">Kategori</a></li>
                         <li class="nav-link"><a style="text-decoration: none" href="/items">Barang</a></li>
                     </ul>
 

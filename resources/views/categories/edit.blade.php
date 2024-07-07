@@ -9,10 +9,13 @@
                         Update Data Kategori                    
                     </div>
                     <div class="card-body">
+                        <form action="{{ route('category.update', $category->id) }}" method="post">
+                        @csrf
+                        {{ method_field('PUT') }}
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" name="nama_kategori" placeholder="Nama Kategori">
+                                    <input required value="{{ $category->category_name }}" type="text" class="form-control" name="category_name" placeholder="Nama Kategori">
                                     <label>Nama Kategori</label>
                                 </div>
                             </div>
@@ -23,6 +26,7 @@
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
