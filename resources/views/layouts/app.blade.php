@@ -32,12 +32,14 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @auth
                     <ul class="navbar-nav me-auto">
                         <li class="nav-link"><a style="text-decoration: none" href="/room">Ruangan</a></li>
                         <li class="nav-link"><a style="text-decoration: none" href="/user">Pengguna</a></li>
                         <li class="nav-link"><a style="text-decoration: none" href="/category">Kategori</a></li>
-                        <li class="nav-link"><a style="text-decoration: none" href="/items">Barang</a></li>
+                        <li class="nav-link"><a style="text-decoration: none" href="/item">Barang</a></li>
                     </ul>
+                    @endauth
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">

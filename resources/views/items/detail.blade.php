@@ -12,70 +12,43 @@
                         <table class="table table-borderless">
                             <tr>
                                 <th>Detail Gambar</th>
-                                <th>1000</th>
+                                <th>
+                                    <img class="img-thumbnail" src="{{ asset('/storage/images/item/'.$item->image) }}" alt="gambar item" width="400px">
+                                </th>
                             </tr>
                             <tr>
                                 <th>Nama Ruangan</th>
-                                <th>A5</th>
+                                <th>{{ $item->room->room_name }}</th>
                             </tr>
                             <tr>
                                 <th>Kategori/Jenis Barang</th>
-                                <td>elektronik</td>
+                                <td>{{ $item->category->category_name }}</td>
                             </tr>
                             <tr>
                                 <th>Nomor Barang</th>
-                                <td>4573</td>
+                                <td>{{ $item->item_number }}</td>
                             </tr>
                             <tr>
                                 <th>Stok Barang</th>
-                                <td>45678</td>
+                                <td>{{ $item->stock }}</td>
                             </tr>
                             <tr>
                                 <th>Kondisi</th>
                                 <td>
+                                    @if($item->condition == 'baik')
                                     <span class="badge text-bg-primary">Baik</span>
+                                    @elseif($item->condition == 'rusak')
                                     <span class="badge text-bg-primary">Rusak</span>
+                                    @elseif($item->condition == 'tidak layak')
                                     <span class="badge text-bg-primary">Tidak Layak</span>
+                                    @endif
                                 </td>
                             </tr>
                             <tr>
                                 <th>Spesifikasi</th>
-                                <td>Masih Bagus</td>
+                                <td>{!!$item->spec!!}</td>
                             </tr>
                         </table>
-                    </div>
-                </div>
-                <div class="card mt-3">
-                    <div class="card-header">
-                        Data Barang
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-strip" id="myTable">
-                                <thead>
-                                    <th>Gambar</th>
-                                    <th>Nomor Gambar</th>
-                                    <th>Nama Barang</th>
-                                    <th>tempat</th>
-                                    <th>Pilihan</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Gambar</td>
-                                        <td>12345</td>
-                                        <td>kabel</td>
-                                        <td>A3</td>
-                                        <td>
-                                            <form action="">
-                                                <button type="submit" class="btn btn-danger">Hapus</button>
-                                                <a href="/items/edit" class="btn btn-warning">edit</a>
-                                                <a href="" class="btn btn-success">Detail</a>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>
